@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Text, View, TouchableOpacity, TextInput, Alert } from 'react-native';
-import estilos from './estilos';
+import estilos from './styles';
 import { atualizarRepositoriosDoUsuario } from '../../services/requisicoes/repositorios';
 import { deletarRepositoriosDoUsuario } from '../../services/requisicoes/repositorios';
 

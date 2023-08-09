@@ -82,9 +82,10 @@ const estilos = StyleSheet.create({
         marginTop: 5,
     },
     repositorios: {
-        color: '#95A8B2',
+        color: '#696969',
         fontSize: 12,
         marginTop: 10,
+        marginLeft: 10,
         fontWeight: 'bold',
         justifyContent: 'center',
         alignItems: 'center',

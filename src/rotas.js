@@ -8,6 +8,8 @@ import Principal from './paginas/Principal';
 import Repositorios from './paginas/Repositorios';
 import CriarRepositorio from './paginas/CriarRepositorio';
 import InfoRepositorio from './paginas/InfoRepositorio';
+import Seguidores from './paginas/Seguidores';
+import Seguindo from './paginas/Seguindo';
 
 export default function Rotas() {
     return (
@@ -17,6 +19,9 @@ export default function Rotas() {
                 <Tab.Screen name="Repositorios" options={{ title: "Repositórios", headerTitleAlign: 'center' }}  component={Repositorios} />
                 <Tab.Screen name="CriarRepositorio" options={{ title: "Criar Repositório", headerTitleAlign: 'center' }} component={CriarRepositorio} />
                 <Tab.Screen name="InfoRepositorio" options={{ title: "Repositório Info", headerTitleAlign: 'center' }} component={InfoRepositorio} />
+            
+                <Tab.Screen name="Seguidores" options={{ title: "Seguidores", headerTitleAlign: 'center' }} component={Seguidores} />
+                <Tab.Screen name="Seguindo" options={{ title: "Seguindo", headerTitleAlign: 'center' }} component={Seguindo} />
             </Tab.Navigator>
         </NavigationContainer>
     );

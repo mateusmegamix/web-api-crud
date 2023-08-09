@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Text, View, TouchableOpacity, TextInput, Alert } from 'react-native';
-import estilos from './estilos';
+import estilos from './styles';
 import { salvarRepositoriosDoUsuario } from '../../services/requisicoes/repositorios';
 
 export default function CriarRepositorio({ route, navigation }) {
