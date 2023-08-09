@@ -8,7 +8,7 @@ const estilos = StyleSheet.create({
         marginBottom: 20,
     },
     botao: {
-        backgroundColor: '#8A07DA',
+        backgroundColor: '#000000',
         marginTop: 20,
         padding: 10,
         alignItems: 'center',
@@ -27,7 +27,7 @@ const estilos = StyleSheet.create({
         paddingHorizontal: 20,
         fontSize: 16,
         color: '#444',
-        marginTop: 40,
+        marginTop: 10,
         borderRadius: 8,
         height: 44,
         width: '90%',
@@ -47,17 +47,18 @@ const estilos = StyleSheet.create({
         borderRadius: 60,
     },
     fundo: {
-        width: '100%',
-        height: 156,
+        width: '65%',
+        height: 100,
+        marginBottom: 50
+
     },
     textoNome: {
-        fontSize: 21,
+        fontSize: 16,
         fontWeight: '600',
         color: '#45565F',
-        padding: 15
     },
     textoEmail: {
-        fontSize: 17,
+        fontSize: 12,
         color: '#717E84',
         marginTop: 5,
     },
@@ -72,7 +73,7 @@ const estilos = StyleSheet.create({
         alignItems: 'center',
     },
     seguidoresNumero: {
-        color: '#8A07DA',
+        color: '#000000',
         fontSize: 15,
     },
     seguidoresTexto: {
@@ -81,9 +82,13 @@ const estilos = StyleSheet.create({
         marginTop: 5,
     },
     repositorios: {
-        color: '#8A07DA',
-        fontSize: 15,
-        fontWeight: '400',
+        color: '#95A8B2',
+        fontSize: 12,
+        marginTop: 10,
+        fontWeight: 'bold',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center'
     }
 });
 

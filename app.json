@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "AluraHub",
-    "slug": "AluraHub",
+    "name": "Web_API_Crud",
+    "slug": "Web_API_Crud",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.web_api_crud"
     },
     "web": {
       "favicon": "./assets/favicon.png"

@@ -8,7 +8,7 @@ const estilos = StyleSheet.create({
         justifyContent: 'center',
     },
     botao: {
-        backgroundColor: '#8A07DA',
+        backgroundColor: '#000000',
         marginTop: 20,
         padding: 10,
         alignItems: 'center',

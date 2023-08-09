@@ -41,20 +41,25 @@ export default function Principal({ navigation }) {
                         <Text style={estilos.textoNome}>{usuario.name}</Text>
                         <Text style={estilos.textoEmail}>{usuario.email}</Text>
                         <View style={estilos.seguidoresArea}>
-                            <View style={estilos.seguidores}>
-                                <Text style={estilos.seguidoresNumero}>{usuario.followers}</Text>
-                                <Text style={estilos.seguidoresTexto}>Seguidores</Text>
-                            </View>
+                            <TouchableOpacity onPress={() => {}}>
+                                <View style={estilos.seguidores}>
+                                    <Text style={estilos.seguidoresNumero}>{usuario.followers}</Text>
+                                    <Text style={estilos.seguidoresTexto}>Seguidores</Text>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity  onPress={() => {}}>
                             <View style={estilos.seguidores}>
                                 <Text style={estilos.seguidoresNumero}>{usuario.following}</Text>
                                 <Text style={estilos.seguidoresTexto}>Seguindo</Text>
                             </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => navigation.navigate('Repositorios', {id: usuario.id})}>
+                                <Text style={estilos.repositorios}>
+                                    {"Abrir\n Repositórios"}
+                                </Text>
+                            </TouchableOpacity>
                         </View>
-                        <TouchableOpacity onPress={() => navigation.navigate('Repositorios', {id: usuario.id})}>
-                            <Text style={estilos.repositorios}>
-                                Ver os repositórios
-                            </Text>
-                        </TouchableOpacity>
+                        
                     </>
                 }
 
