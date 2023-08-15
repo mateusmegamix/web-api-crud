@@ -9,13 +9,6 @@ export default function Principal({ navigation }) {
     const [usuario, setUsuario] = useState({});
 
     async function busca() {
-        // api.get('/users?login=andreocunha').then(
-        //     response => {
-        //         console.log(response.data)
-        //     }
-        // ).catch(erro => {
-        //     console.log(erro)
-        // })
         const resultado = await buscarUsuario(nomeUsuario);
 
         setNomeUsuario('')
@@ -41,13 +34,13 @@ export default function Principal({ navigation }) {
                         <Text style={estilos.textoNome}>{usuario.name}</Text>
                         <Text style={estilos.textoEmail}>{usuario.email}</Text>
                         <View style={estilos.seguidoresArea}>
-                            <TouchableOpacity onPress={() => navigation.navigate('Seguidores')}>
+                            <TouchableOpacity onPress={() => navigation.navigate('Seguidores', {id: usuario.id})}>
                                 <View style={estilos.seguidores}>
                                     <Text style={estilos.seguidoresNumero}>{usuario.followers}</Text>
                                     <Text style={estilos.seguidoresTexto}>Seguidores</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity  onPress={() => navigation.navigate('Seguindo')}>
+                            <TouchableOpacity  onPress={() => navigation.navigate('Seguindo', {id: usuario.id})}>
                             <View style={estilos.seguidores}>
                                 <Text style={estilos.seguidoresNumero}>{usuario.following}</Text>
                                 <Text style={estilos.seguidoresTexto}>Seguindo</Text>

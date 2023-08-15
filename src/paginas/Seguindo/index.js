@@ -1,26 +1,34 @@
-import React, { useState } from 'react';
-import { Text, View, Image, TouchableOpacity, TextInput, Alert, ScrollView, FlatList } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Text, View, Image, FlatList } from 'react-native';
 import estilos from './styles';
+import { useIsFocused } from '@react-navigation/native';
+import { buscarSeguindo } from '../../services/requisicoes/following';
 
 
-export default function Seguindo({ route, navigation }) {
-    const renderItem = () => {
-        return(
-            <ScrollView>
-                <View style={estilos.container}>
-                        <Image source={{ uri: 'https://yt3.googleusercontent.com/gZjsx7tOcVXpW-CY5KvzCn1PEnyZF_XOBF5s-JEPphWXCVECSRAyFFPnafA2DHZCETyL_V8unsU=s176-c-k-c0x00ffffff-no-rj' }} style={estilos.imagem} />
-                        <View style={estilos.containerText}>
-                            <Text style={estilos.text}>Nome: </Text>
-                            <Text style={estilos.nome}>Lucas Veloz</Text>
-                        </View>
-                </View>
-            </ScrollView> 
-        )
-    }
+export default function Seguidores({ route, navigation }) {
+
+    const [following, setFollowing] = useState([]);
+    const estaNaTela = useIsFocused();
+
+    useEffect( async () => {
+        const resultado = await buscarSeguindo(route.params.id)
+        setFollowing(resultado)
+    }, [estaNaTela])
+    
     return (
-        <FlatList 
-            data={[0]}
-            renderItem={() => renderItem()}
+        <FlatList
+            data={following}
+            keyExtractor={following => following.id}
+            renderItem={({item}) => (
+                <View style={estilos.container}>
+                    <Image source={{ uri: item.avatar_url }} style={estilos.imagem} />
+                    <View style={estilos.containerText}>
+                        <Text style={estilos.text}>Nome: </Text>
+                        <Text style={estilos.nome}>{item.login}</Text>
+                    </View> 
+                </View>
+            )
+            }
         />
     )
 }

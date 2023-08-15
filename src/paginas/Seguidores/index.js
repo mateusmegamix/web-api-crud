@@ -1,38 +1,36 @@
-import React, { useState } from 'react';
-import { Text, View, Image, TouchableOpacity, TextInput, Alert, ScrollView, FlatList } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Text, View, Image, TouchableOpacity, FlatList } from 'react-native';
 import estilos from './styles';
+import { useIsFocused } from '@react-navigation/native';
+import { buscarSeguidores } from '../../services/requisicoes/followers';
 
 
 export default function Seguidores({ route, navigation }) {
+
+    const [followers, setFollowers] = useState([]);
+    const estaNaTela = useIsFocused();
+
+    useEffect( async () => {
+        const resultado = await buscarSeguidores(route.params.id)
+        setFollowers(resultado)
+    }, [estaNaTela])
     
-    const renderItem = () => {
-        return(
-            <ScrollView>
-                <View style={estilos.container}>
-                        <Image source={{ uri: 'https://avatars.githubusercontent.com/u/39318912?v=4' }} style={estilos.imagem} />
-                        <View style={estilos.containerText}>
-                            <Text style={estilos.text}>Nome: </Text>
-                            <Text style={estilos.nome}>Mateus Pereira Militão</Text>
-                        </View>
-                        
-                </View>
-                <View style={estilos.container}>
-                        <Image source={{ uri: 'https://avatars.githubusercontent.com/u/39318912?v=4' }} style={estilos.imagem} />
-                        <View style={estilos.containerText}>
-                            <Text style={estilos.text}>Nome: </Text>
-                            <Text style={estilos.nome}>Mateus Pereira Militão</Text>
-                        </View>
-                        
-                </View>
-            </ScrollView>
-        )
-        
-    }
-        
-return (
+    return (
         <FlatList
-            data={[0]}
-            renderItem={renderItem}
+            data={followers}
+            keyExtractor={followers => followers.id}
+            renderItem={({item}) => (
+                <View>
+                    <TouchableOpacity style={estilos.container} onPress={() => navigation.navigate('Seguidores', {id: usuario.id})}>
+                        <Image source={{ uri: item.avatar_url }} style={estilos.imagem} />
+                        <View style={estilos.containerText}>
+                            <Text style={estilos.text}>Nome: </Text>
+                            <Text style={estilos.nome}>{item.login}</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+            )
+            }
         />
     )
 }

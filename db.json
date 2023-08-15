@@ -12,11 +12,11 @@
     {
       "login": "Flavio",
       "id": 2,
-      "avatar_url": "https://avatars.githubusercontent.com/u/9091491?v=4",
-      "name": "Natalia Kelim Thiel",
-      "email": "natalia@email.com",
-      "followers": 51,
-      "following": 7
+      "avatar_url": "https://yt3.googleusercontent.com/NaJTC_t0wXZ5lncCCyAMTqkOesxoZCLhCYBm_Q6ZDPcoFmlYLL3SgPVcFdMPwF_4VIGcQJMDSks=s900-c-k-c0x00ffffff-no-rj",
+      "name": "Flavio Augusto",
+      "email": "flavio@wisereducacao.com",
+      "followers": 1,
+      "following": 0
     },
     {
       "login": "Mateusmegamix",
@@ -64,14 +64,40 @@
       "name": "git",
       "data": "1 de jan. de 2021",
       "postId": 1
+    },
+    {
+      "name": "teste",
+      "data": "aplicando teste",
+      "postId": 3,
+      "id": 6
     }
   ],
-    "followers": [
-      {
-        "id": 1,
-        "followerId": 1,
-        "login": "Pedro",
-        "avatar_url": "https://avatars.githubusercontent.com/u/27506497?v=4"
-      }
-    ]
+  "followers": [
+    {
+      "id": 1,
+      "followerId": 3,
+      "login": "Flavio Augusto",
+      "avatar_url": "https://yt3.googleusercontent.com/NaJTC_t0wXZ5lncCCyAMTqkOesxoZCLhCYBm_Q6ZDPcoFmlYLL3SgPVcFdMPwF_4VIGcQJMDSks=s900-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 2,
+      "followerId": 3,
+      "login": "Pedro",
+      "avatar_url": "https://avatars.githubusercontent.com/u/27506497?v=4"
+    },
+    {
+      "id": 3,
+      "followerId": 2,
+      "login": "Pedro",
+      "avatar_url": "https://avatars.githubusercontent.com/u/27506497?v=4"
+    }
+  ],
+  "following": [
+    {
+      "id": 1,
+      "followingId": 3,
+      "login": "Lucas Veloz",
+      "avatar_url": "https://yt3.googleusercontent.com/gZjsx7tOcVXpW-CY5KvzCn1PEnyZF_XOBF5s-JEPphWXCVECSRAyFFPnafA2DHZCETyL_V8unsU=s176-c-k-c0x00ffffff-no-rj"
+    }
+  ]
 }
