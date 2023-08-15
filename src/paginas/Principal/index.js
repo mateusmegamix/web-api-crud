@@ -9,16 +9,16 @@ export default function Principal({ navigation }) {
     const [usuario, setUsuario] = useState({});
 
     async function busca() {
-        const resultado = await buscarUsuario(nomeUsuario);
+        const res = await buscarUsuario(nomeUsuario);
+        
 
         setNomeUsuario('')
-        if (resultado) {
-            setUsuario(resultado)
+        if (res) {
+            setUsuario(res)
         } else {
             Alert.alert('Usuário não encontrado')
             setUsuario({})
         }
-        console.log(resultado);
     }
 
     return (
@@ -32,7 +32,7 @@ export default function Principal({ navigation }) {
                             <Image source={{ uri: usuario.avatar_url }} style={estilos.imagem} />
                         </View>
                         <Text style={estilos.textoNome}>{usuario.name}</Text>
-                        <Text style={estilos.textoEmail}>{usuario.email}</Text>
+                        <Text style={estilos.textoEmail}>{usuario.company}</Text>
                         <View style={estilos.seguidoresArea}>
                             <TouchableOpacity onPress={() => navigation.navigate('Seguidores', {id: usuario.id})}>
                                 <View style={estilos.seguidores}>
