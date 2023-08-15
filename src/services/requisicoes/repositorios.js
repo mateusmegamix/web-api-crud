@@ -2,7 +2,7 @@ import api from '../api';
 
 export async function buscarRepositoriosDoUsuario(id) {
     try {
-        const resultado = await api.get(`/repos?postId=${id}`)
+        const resultado = await api.get(`/repos?id=${id}`)
         return resultado.data
     } catch (error) {
         console.log(error)

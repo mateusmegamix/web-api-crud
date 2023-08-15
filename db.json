@@ -20,7 +20,7 @@
     },
     {
       "login": "Mateusmegamix",
-      "id": 3,
+      "id": 39318912,
       "avatar_url": "https://avatars.githubusercontent.com/u/39318912?v=4",
       "name": "Mateus Pereira Militão",
       "email": "mateusp.1996@gmail.com",
@@ -68,20 +68,20 @@
     {
       "name": "teste",
       "data": "aplicando teste",
-      "postId": 3,
+      "postId": 39318912,
       "id": 6
     }
   ],
   "followers": [
     {
       "id": 1,
-      "followerId": 3,
+      "followerId": 39318912,
       "login": "Flavio Augusto",
       "avatar_url": "https://yt3.googleusercontent.com/NaJTC_t0wXZ5lncCCyAMTqkOesxoZCLhCYBm_Q6ZDPcoFmlYLL3SgPVcFdMPwF_4VIGcQJMDSks=s900-c-k-c0x00ffffff-no-rj"
     },
     {
       "id": 2,
-      "followerId": 3,
+      "followerId": 39318912,
       "login": "Pedro",
       "avatar_url": "https://avatars.githubusercontent.com/u/27506497?v=4"
     },

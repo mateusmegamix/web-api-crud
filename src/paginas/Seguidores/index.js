@@ -13,24 +13,30 @@ export default function Seguidores({ route, navigation }) {
     useEffect( async () => {
         const resultado = await buscarSeguidores(route.params.id)
         setFollowers(resultado)
+        console.log('teste de usuario followers: ', resultado)
     }, [estaNaTela])
-    
-    return (
-        <FlatList
-            data={followers}
-            keyExtractor={followers => followers.id}
-            renderItem={({item}) => (
-                <View>
-                    <TouchableOpacity style={estilos.container} onPress={() => navigation.navigate('Seguidores', {id: usuario.id})}>
+
+    const renderItem = (_item) => {
+        return (
+            followers.map((item, index) => {
+                return (
+                    <View key={index} style={estilos.container}>
                         <Image source={{ uri: item.avatar_url }} style={estilos.imagem} />
                         <View style={estilos.containerText}>
                             <Text style={estilos.text}>Nome: </Text>
                             <Text style={estilos.nome}>{item.login}</Text>
                         </View>
-                    </TouchableOpacity>
-                </View>
-            )
-            }
+                    </View>
+                )
+            })
+        )
+    } 
+    
+    return (
+        <FlatList
+            data={followers}
+            keyExtractor={followers => followers.id}
+            renderItem={({_item}) => renderItem(_item)}
         />
     )
 }
